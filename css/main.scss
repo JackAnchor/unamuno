@@ -1,0 +1,65 @@
+/**
+ * Main CSS
+ *
+ * The primary Sass file to be compiled
+ *
+ * Define default card styles in variable file (border, color, size)
+ * Define default factsheet, index, inline card styles
+ * Not Configured: base/border, components/border
+ *
+ */
+
+ /* Utilities
+ –––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import "utilities/variables";  // Variables
+@import "utilities/colors";
+
+
+/* Base
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@import "base/normalize";  // Normalize
+@import "base/align";
+@import "base/border";
+@import "base/flexbox";
+@import "base/grid";
+@import "base/hide";
+@import "base/layout";
+@import "base/margin";
+@import "base/padding";
+@import "base/position";
+@import "base/typeography";
+@import "base/typescale";
+
+
+/* Components
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import "components/links";
+@import "components/quotes";
+@import "components/lists";
+@import "components/tables";
+@import "components/backgrounds";
+@import "components/borders";
+@import "components/buttons";
+@import "components/forms";
+@import "components/media";
+@import "components/cards";
+@import "components/carousel";
+
+
+/* Content
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import "content/about";
+@import "content/factsheet";
+@import "content/footer";
+@import "content/page";
+@import "content/home";
+@import "content/petition";
+@import "content/post";
+@import "content/profile";
+@import "content/sidebar";
+@import "content/news";
+@import "content/nav";
+
+// Custom Project
+@import "project";
