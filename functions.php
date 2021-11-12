@@ -57,7 +57,6 @@
  *  Disable Gutenberg Posts (REST API disables custom posts)
  *  Modify/Build Comments Data
  *  Disable Wordpress Attachement Page (Excluding Media Uploads)
- *  Redirect APP Immigration Page
  *
  *  VII. SEO Metadata
  *  Post Meta, Factsheet Meta, Petition Meta, Profile Meta, Attachment Meta
@@ -977,7 +976,6 @@ add_filter('gettext', 'una_activity_dash_title');
  }
  add_action( 'admin_bar_menu', 'una_remove_wp_logo', 999 );
 
-
 // Modify 'Howdy' text  --->
  function unamuno_wordpress_howdy( $wp_admin_bar ) {
   $my_account = $wp_admin_bar->get_node('my-account');
@@ -989,28 +987,22 @@ add_filter('gettext', 'una_activity_dash_title');
   }
  add_filter( 'admin_bar_menu', 'unamuno_wordpress_howdy',999 );
 
-
- // Modify Admin Footer Text   --->
+// Modify Admin Footer Text   --->
  function una_modify_footer() {
   echo get_bloginfo('name');
    }
    add_filter( 'admin_footer_text', 'una_modify_footer' );
 
-
- // Remove G Form Button on Posts/Pages
+// Remove G Form Button on Posts/Pages
   add_filter( 'gform_display_add_form_button', '__return_false' );
 
-
- // Reposition G Form Admin Menu Icon to Bottom   --->
+// Reposition G Form Admin Menu Icon to Bottom   --->
  function una_gform_menu_position( $position ) {
      return 100;
  }
  add_filter( 'gform_menu_position', 'una_gform_menu_position' );
 
-
-
-
- // Enable WordPress Thumbnails (Posts/Pages)   --->
+// Enable WordPress Thumbnails (Posts/Pages)   --->
 add_theme_support( 'post-thumbnails' );
 
 // Enable WordPress Page Excerpts   --->
@@ -1045,7 +1037,7 @@ function unamuno_excerpt_length( $length ) {
 add_filter('excerpt_length', 'unamuno_excerpt_length', 999 );
 
 
-// Add About Page CSS Class
+// Add About Page CSS Class   --->
 function unamuno_about_css( $classes ) {
     if ( is_page( array( 'About', 'Contact'  ) ) ) {
         $classes[] = 'page-about';
@@ -1063,8 +1055,7 @@ function unamuno_contact_css( $classes ) {
 }
 add_filter( 'body_class', 'unamuno_contact_css' );
 
-
-// Modify Excerpts Label for all Posts/Pages
+// Modify Excerpts Label for all Posts/Pages   --->
   function una_admin_excerpt_modify( $translation, $original ) {
     if ( 'Excerpt' == $original ) {
     return 'Description';
@@ -1102,7 +1093,7 @@ add_filter( 'gettext', 'una_admin_excerpt_modify', 10, 2 );
  }
  add_action( 'init', 'una_disable_wp_emojicons' );
 
-// Disable TinyMCE emojis
+// Disable TinyMCE emojis   --->
   function una_disable_tinymce_emojicons( $plugins ) {
     if ( is_array( $plugins ) ) {
       return array_diff( $plugins, array( 'wpemoji' ) );
@@ -1112,8 +1103,7 @@ add_filter( 'gettext', 'una_admin_excerpt_modify', 10, 2 );
   }
 
 
-
- // Rename Default Post Type to 'Press'
+ // Rename Default Post Type to 'Press'   --->
  function una_rename_default_post( $labels ) {
  // Labels
    $labels->name = 'Press';
@@ -1461,18 +1451,6 @@ function cleanup_default_rewrite_rules( $rules ) {
 add_filter( 'rewrite_rules_array', 'cleanup_default_rewrite_rules' );
 
 
-//  Redirect Immigration Page  --->
-function unamuno_redirect_immigration_page() {
-    if ( is_page( 'Immigration R' ) ) {
-        // Redirect to new APP url, set status to 301 permenant redirect
-        wp_redirect( 'https://americanprinciplesproject.org/research/immigration/', 301 );
-        exit;
-    }
-}
-add_action('template_redirect', 'unamuno_redirect_immigration_page');
-
-
-
 // Post Meta -->
   function unamuno_add_post_meta() {
     if ( is_singular( 'post' ) && !is_attachment() && !is_singular( 'unaprofile' ) && !is_singular( 'unafactsheet' ) && !is_singular( 'unapetition' )) {
@@ -1561,9 +1539,6 @@ add_action('template_redirect', 'unamuno_redirect_immigration_page');
             }
       }
       </script>
-
-
-
       <?php
     }
   }
@@ -1641,7 +1616,6 @@ add_action('template_redirect', 'unamuno_redirect_immigration_page');
       }
     }
     </script>
-
       <?php
     }
   }
@@ -1726,7 +1700,6 @@ add_action('template_redirect', 'unamuno_redirect_immigration_page');
         }
       }
     </script>
-
       <?php
     }
   }
@@ -1797,7 +1770,6 @@ add_action('template_redirect', 'unamuno_redirect_immigration_page');
         }
       }
       </script>
-
         <?php
       }
     }
@@ -1904,7 +1876,6 @@ add_action('template_redirect', 'unamuno_redirect_immigration_page');
         }
       }
       </script>
-
       <?php
     }
   }
