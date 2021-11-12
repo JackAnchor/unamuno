@@ -80,12 +80,6 @@
  *  AMP Image Sanitize
  *  Animation Page Script
  *
- * XII. MU SQL Plugin (optional)
- *  WP Admin User Styles
- *  WP 'Powered by' Bloat
- *  WP Menu Page
- *  WP Menu Bar 'Quick Links'
- *
  */
 
 
